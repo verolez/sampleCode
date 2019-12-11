@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WebApplication1.Models.Student>
+
+@{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => item.ID)</td>
+            <td>@Html.DisplayFor(m => item.StudentName)</td>
+            <td>@Html.DisplayFor(m => item.Email)</td>
+            <td>@Html.DisplayFor(m => item.Address)</td>
+            <td><a href="#modalForm" data-value="@item.ID" onclick="setBtnValue('edit', event)" data-toggle="modal">Edit</a> / 
+                <a href="javascript:void(0);" onclick="RemoveStudent(@item.ID)">Delete</a>
+            </td>
+        </tr>
+    }
+}
